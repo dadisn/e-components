@@ -18,6 +18,5 @@
   },
   "publishConfig": {
     "registry": "http://npm.entize.se"
-  },
-  "private": true
+  }
 }
