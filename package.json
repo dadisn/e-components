@@ -1,0 +1,23 @@
+{
+  "name": "e-components",
+  "version": "0.1.0",
+  "description": "Entize Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dadisn/e-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dadisn/e-components/issues"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "publishConfig": {
+    "registry": "http://npm.entize.se"
+  },
+  "private": true
+}
