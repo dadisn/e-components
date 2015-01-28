@@ -1,0 +1,9 @@
+<index: element="toast">
+  {{each #root._session.toast as #toast, #index}}
+    <div class="alert alert-{{#toast.type}}{{if #toast.sticky}} alert-dismissable{{/if}}{{if #toast.faded}} faded{{/if}}" role="alert">
+      {{if #toast.sticky}}
+        <button type="button" class="close" aria-label="Close" on-click="remove(#index)"><span aria-hidden="true">&times;</span></button>
+      {{/if}}
+      {{unescaped #toast.message}}
+    </div>
+  {{/each}}
