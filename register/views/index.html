@@ -1,0 +1,26 @@
+<index: arrays="groups" element="register">
+  <form role="form" on-submit="submit()">
+    <div class="form-group">
+      <input type='text' class="form-control" placeholder="{{emailText || 'E-post'}}" value="{{email}}" autofocus=true />
+      <p class="help-block"></p>
+    </div>
+    <div class="form-group">
+      <input type='password' class="form-control" placeholder="{{passwordText || 'Lösenord'}}" value="{{password}}" />
+      <p class="help-block"></p>
+    </div>
+    <div class="form-group">
+      <input type='password' class="form-control" placeholder="{{confirmText || 'Bekräfta lösenord'}}" value="{{confirm}}" />
+      <p class="help-block"></p>
+    </div>
+    <div class="form-group">
+      <select class="form-control">
+        <option selected="{{groupId === undefined}}" value="{{undefined}}">Välj Användaregrupp</option>
+        {{each @groups as #group}}
+          <option selected="{{groupId === #group.id}}" value="{{#group.id}}">{{#group.name}}</option>
+        {{/each}}
+      </select>
+      <p class="help-block"></p>
+    </div>
+    <p class="text-danger">{{error}}</p>
+    <input type="submit" class="btn btn-primary btn-block" value="{{text || 'Registrera'}}" disabled="{{error || sending}}" />
+  </form>
