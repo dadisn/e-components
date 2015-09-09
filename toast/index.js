@@ -28,7 +28,7 @@ Model.prototype.toast = function(type, message, options) {
 
   var self = this;
   var sticky = options ? options.sticky : defaultOptions.sticky;
-  var timeout = options ? options.timeout : defaultOptions.timeout; 
+  var timeout = options.timeout || defaultOptions.timeout; 
   var toast = {
       id: this.id()
     , type: type
@@ -41,11 +41,11 @@ Model.prototype.toast = function(type, message, options) {
   this.root.unshift('_session.toast', toast, function() {
     if(sticky) return;
     setTimeout(function() {
-      var toasts = self.model.root.get('_session.toast');
+      var toasts = self.root.get('_session.toast');
       var len = toasts.length;
 
       for(var i = 0; i < len; i++) {
-        if(toasts[i].id === toast.id) return self.remove(i);
+        if(toasts[i].id === toast.id) return self.remove('_session.toast', i);
       }
     }, timeout);
   });
