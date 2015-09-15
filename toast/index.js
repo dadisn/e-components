@@ -28,7 +28,7 @@ Model.prototype.toast = function(type, message, options) {
 
   var self = this;
   var sticky = options ? options.sticky : defaultOptions.sticky;
-  var timeout = options.timeout || defaultOptions.timeout; 
+  var timeout = (options && options.timeout) || defaultOptions.timeout;
   var toast = {
       id: this.id()
     , type: type
