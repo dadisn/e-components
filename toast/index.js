@@ -45,7 +45,7 @@ Model.prototype.toast = function(type, message, options) {
       var len = toasts.length;
 
       for(var i = 0; i < len; i++) {
-        if(toasts[i].id === toast.id) return self.remove('_session.toast', i);
+        if(toasts[i].id === toast.id) return self.root.remove('_session.toast', i);
       }
     }, timeout);
   });
